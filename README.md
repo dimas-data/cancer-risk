@@ -43,11 +43,11 @@ This work aligns with **Sustainable Development Goal 3 (Good Health and Well-Bei
 ## Project Structure
 ```text
 OncoShield-AI/
-├── data/       Preprocessed and raw dataset files
+├── data/       raw/, processed/, and outputs/ (K-Means results)
 ├── models/     Trained models (XGBoost & Keras MLP)
 ├── reports/    Analytical output folder
-│   ├── plots/  Visual charts, ROC curves, and cluster figures (.png)
-│   └── tables/ CSV metrics, summary tables, and confusion matrices (.csv)
+│   ├── plots/  CSV metrics, summary tables, and confusion matrices (.csv)
+│   └── tables/ Visual charts, ROC curves, and cluster figures (.png)
 ├── scripts/    Analysis pipeline (run in order)
 ├── app/        R-Shiny dashboard code
 └── README.md
@@ -77,26 +77,26 @@ OncoShield-AI/
 ### ROC Curve (XGBoost – Binary v2)
 Shows the Youden optimal point (threshold = 0.648) vs. the chosen clinical threshold (0.10).
 
-![ROC Curve](reports/plots/roc_elevated_risk_v2.png)
+![ROC Curve](reports/tables/roc_elevated_risk_v2.png)
 
 ### XGBoost Feature Importance (Top 20)
 Interaction features (e.g., alcohol + obesity, smoking + air pollution) dominate the decision-making process.
 
-![Feature Importance](reports/plots/xgboost_feature_importance.png)
+![Feature Importance](reports/tables/feature_importance_binary_v2.png)
 
 ### SHAP Summary (Elevated Risk Class)
 
-![SHAP Summary](reports/plots/shap_summary.png)
+![SHAP Summary](reports/tables/shap_summary_binary_v2.png)
 
 ### K-Means Clustering (PCA Projection)
 Visualization of the three distinct biometric patient profiles.
 
-![K-Means Clusters](reports/plots/kmeans_clusters.png)
+![K-Means Clusters](reports/tables/M4_KMeans_Cluster_Plot.png)
 
 ### M5 MLP Confusion Matrix (3-Class)
 Misclassifications occur primarily at the boundary between Low and Medium risk.
 
-![MLP Confusion Matrix](reports/plots/mlp_confusion_matrix.png)
+![MLP Confusion Matrix](reports/tables/m5_confusion_matrix_plot_final.png)
 
 ## OncoShield AI (R-Shiny App)
 A reactive, web-based dashboard built with Shiny and shinydashboard.
